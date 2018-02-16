@@ -141,7 +141,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule implements Act
     File imageFile;
     try {
       imageFile = File.createTempFile("exponent_capture_", ".jpg",
-          Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES));
+          mScopedContext.getCacheDir());
     } catch (IOException e) {
       e.printStackTrace();
       return;
